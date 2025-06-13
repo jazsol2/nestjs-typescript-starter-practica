@@ -5,7 +5,7 @@ import { TasksModule } from './tasks/tasks.module';
 
 @Module({
   imports: [TasksModule],
-  controllers: [ TasksController, UsersController],
+  controllers: [UsersController],
   providers: [],
 })
 export class AppModule {}

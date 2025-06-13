@@ -1,5 +1,5 @@
 import { Body, Injectable } from '@nestjs/common';
-import { createTaskDto } from './dto/create-task.dto';
+import { CreateTaskDto } from './dto/create-task.dto';
 
 export interface Task{
     id: number;
@@ -10,19 +10,17 @@ export interface Task{
 
 @Injectable()
 export class TasksService {
-    private task: Task []= []   
+    private tasks: Task []= []   
     
     getAllTasks(): Task[] {
-        return this.task;
+        return this.tasks;
     }
 
-    createTasks(@Body() task: createTaskDto): createTaskDto {
-        this.createTasks.push(
-            {
-              ...task
-              id: this.createTasks.length +1  
-            }
-        );
+    createTask(task: CreateTaskDto): CreateTaskDto {
+        this.tasks.push({
+            ...task,
+            id: this.tasks.length + 1
+        });
         return task;
       }
 }

@@ -8,3 +8,5 @@ content-type: application/json
 {
     "name": "Jazmin"
 }
+
+GET https://nestjstypescriptstarterpractic-onjn--3000--858c0e43.local-credentialless.webcontainer.io/tasks?id/a

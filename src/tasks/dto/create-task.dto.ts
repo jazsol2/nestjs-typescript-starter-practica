@@ -1,5 +1,20 @@
+import {IsBoolean,IsString,MinLength,IsNumber,IsEmail } from 'class-validator';
+
 export class CreateTaskDto {
-    title: string 
-    description: string
-    estatus: boolean
+    @IsString()
+    @MinLength(1)
+    title: string;
+
+    @IsString()
+    @MinLength(1)
+    description: string;
+
+    @IsNumber()
+    priority: number;
+
+    @IsEmail()
+    email: string;
+
+    @IsBoolean()
+    estatus: boolean;
 }
